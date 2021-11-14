@@ -40,8 +40,9 @@ As well as install tools, it can be useful to make sure things like, the AWS CLI
 
 ### Configure AWS Profile
 
-> First, make sure `AWS_PROFILE` is set to something unique to your org name, such as "cne", by default this is undefined, as it will be different for each org. If you're the first person to clone this template, set this value so the rest of your team will not have to.
-> First, make sure `AWS_REGION` is set to which AWS Region you use, such as `us-west-2`
+> Make sure `AWS_PROFILE` is set to something unique to your org name, such as "cne", by default this is undefined, as it will be different for each org. If you're the first person to clone this template, set this value so the rest of your team will not have to.
+
+> Make sure `AWS_REGION` is set to which AWS Region you use, such as `us-west-2`
 
 Get your AWS credentials from an AWS administrator, then run:
 
@@ -65,6 +66,7 @@ Future scripts can then expect this AWS profile to exist.
 This is actually a single command using the AWS Cli, however, it's not something that most people remember, so I included it here for simplicity.
 
 > Make sure `AWS_REGION` is set to which AWS Region you use, such as `us-west-2`
+
 > Set the value of `EKS_CLUSTER_NAME` to the name of your EKS cluster
 
 Then run `make onboard-eks-cluster`
