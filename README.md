@@ -7,7 +7,7 @@ this particular example is for installing on Mac, but the same can be done for d
 Run the onboard script with `curl | sh`
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/CloudNativeEntrepreneur/onboard/master/onboard.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/CloudNativeEntrepreneur/onboard/main/onboard.sh)"
 ```
 
 OR, run `git clone` this repo, and run the script with
