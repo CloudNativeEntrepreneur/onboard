@@ -306,6 +306,13 @@ else
     brew install --cask ngrok
 fi;
 
+# kubernetes secret decoder
+if [ -x "$(command -v ksd)" ]; then
+    echo "✔️ ksd installed"
+else
+    brew install mfuentesg/tap/ksd
+fi;
+
 echo "Copying your SSH key to your clipboard"
 pbcopy < ~/.ssh/id_rsa.pub
 sleep 1
