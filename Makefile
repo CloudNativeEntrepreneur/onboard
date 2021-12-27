@@ -19,6 +19,7 @@ ifndef AWS_SECRET_ACCESS_KEY
 	$(error Error: AWS_SECRET_ACCESS_KEY is undefined. Please re-run the command with AWS_SECRET_ACCESS_KEY in your environment. )
 endif
 	AWS_PROFILE=$(AWS_PROFILE) \
+	AWS_REGION=$(AWS_REGION) \
 	AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
 	AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 	./configure-aws-profile.sh
