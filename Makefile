@@ -21,7 +21,7 @@ endif
 	AWS_PROFILE=$(AWS_PROFILE) \
 	AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
 	AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
-	./support/scripts/setup/configure-aws-cli.sh
+	./configure-aws-profile.sh
 
 onboard-eks-cluster:
 ifndef AWS_PROFILE
