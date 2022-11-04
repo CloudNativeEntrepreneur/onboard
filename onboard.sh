@@ -133,7 +133,7 @@ presentMenuLoop() {
         if [ "$a" = "7" ]; then
             meta git clone git@github.com:CloudNativeEntrepreneur/example-meta.git
             mkdir -p ~/dev/example-meta
-            mv example-meta ~/dev/example-meta
+            mv example-meta ~/dev
             projectSetup=true
         fi
     done
