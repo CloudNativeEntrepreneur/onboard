@@ -183,5 +183,21 @@ else
     brew install mfuentesg/tap/ksd
 fi;
 
+# argocd - a tool for managing kubernetes deployments
+echo "Installing argocd - a tool for managing kubernetes deployments"
+if [ -x "$(command -v argocd)" ]; then
+    echo "\033[0;32m✔️ argocd installed\033[0m"
+else
+    brew install argocd/tap/argocd
+fi;
+
+# argocd-autopilot - a tool for managing argocd
+echo "Installing argocd-autopilot - a tool for managing argocd"
+if [ -x "$(command -v argocd-autopilot)" ]; then
+    echo "\033[0;32m✔️ argocd-autopilot installed\033[0m"
+else
+    brew install argocd-autopilot/tap/argocd-autopilot
+fi;
+
 # install complete
 echo "\033[0;32m✔️ All tools installed\033[0m"
