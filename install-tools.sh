@@ -87,18 +87,6 @@ else
     npm i -g meta
 fi;
 
-# Kubernetes CLI
-echo "Installing kubectl - a tool for interacting with Kubernetes"
-if [ -x "$(command -v kubectl)" ]; then
-    echo "\033[0;32m✔️ kubectl installed\033[0m"
-else
-    curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"
-    chmod +x ./kubectl
-    sudo mv ./kubectl /usr/local/bin/kubectl
-    # Install tab completion
-    echo "\nsource <(kubectl completion zsh)" >> ~/.zshrc
-fi;
-
 # alternative to curl that some scripts use
 echo "Installing wget - a tool for downloading files"
 if [ -x "$(command -v wget)" ]; then
@@ -165,14 +153,6 @@ else
     echo "installing hasura ..."
     curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
     
-fi;
-
-# Install Kubernetes "Helm charts" – sets of templatized resources for Kubernetes
-echo "Installing helm - a tool for managing kubernetes charts"
-if [ -x "$(command -v helm)" ]; then
-    echo "\033[0;32m✔️ helm installed\033[0m"
-else
-    brew install helm
 fi;
 
 # kubernetes secret decoder
