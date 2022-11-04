@@ -27,6 +27,7 @@ awsConfigured=false
 vsCodeConfigured=false
 zshConfigured=false
 eksJoined=false
+projectSetup=false
 
 # present menu of options
 presentMenu() {
@@ -75,9 +76,16 @@ presentMenu() {
         echo "6. Join EKS cluster"
     fi;
 
+    # option 7: if projectSetup is true, then print "✔️" to the right of "Setup project" and in green
+    if [ "$projectSetup" = true ]; then
+        echo "7. \033[0;32m✔️ Setup project\033[0m"
+    else
+        echo "7. Setup project"
+    fi;
+
     # option 0: exit in red
     echo "0. \033[0;31mExit\033[0m"
-    echo "Enter your choice [ 1 - 6 | 0 ] "
+    echo "Enter your choice [ 1 - 7 | 0 ] "
     read a
 }
 
@@ -119,6 +127,14 @@ presentMenuLoop() {
         if [ "$a" = "6" ]; then
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/CloudNativeEntrepreneur/onboard/main/join-eks.sh)"
             eksJoined=true
+        fi
+
+        # if user selects 7, then setup project
+        if [ "$a" = "7" ]; then
+            meta git clone git@github.com:CloudNativeEntrepreneur/example-meta.git
+            mkdir -p ~/dev/example-meta
+            mv example-meta ~/dev/example-meta
+            projectSetup=true
         fi
     done
 }
